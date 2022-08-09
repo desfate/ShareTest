@@ -64,6 +64,7 @@ public class ShareUtils {
         shareIntent.setPackage(pkg);
         shareIntent.putExtra(Intent.EXTRA_TEXT, msg);
         shareIntent.setType("text/plain");
+        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         activity.startActivity(Intent.createChooser(shareIntent, "Share with"));
     }
 
